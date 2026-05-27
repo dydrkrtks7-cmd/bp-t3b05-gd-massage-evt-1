@@ -1,199 +1,307 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공덕 마사지 이벤트 - Terminal Console & Elden Ring Datamining Secrets</title>
+    <meta name="description" content="공덕 마사지 이벤트의 최고 존엄 터미널 콘솔! 미니멀 호박색 조명 디자인과 프롬 소프트웨어 엘든링 미사용 극비 데이터마이닝 썰이 최고의 힐링 마사지와 만나 결합된 극비 가이드.">
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --neon-amber: #ff9900;
+            --terminal-gray: #1b1e24;
+            --text-color: #a0aec0;
+            --title-color: #f7fafc;
+            --border-color: #2d3748;
+        }
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(var(--border-color) 1px, transparent 0),
+                radial-gradient(var(--border-color) 1px, transparent 0);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+        header {
+            border-bottom: 2px solid var(--neon-amber);
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #050608;
+            box-shadow: 0 4px 15px rgba(255, 153, 0, 0.15);
+            position: relative;
+        }
+        header h1 {
+            color: var(--title-color);
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 0 10px var(--neon-amber);
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+        header p {
+            font-size: 1rem;
+            color: #fbd38d;
+            margin: 15px 0 0 0;
+            letter-spacing: 4px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .nav-links a {
+            color: var(--neon-amber);
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--neon-amber);
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            background-color: rgba(255, 153, 0, 0.05);
+        }
+        .nav-links a:hover {
+            color: #fff;
+            background-color: var(--neon-amber);
+            box-shadow: 0 0 15px var(--neon-amber);
+        }
+        .terminal-box {
+            background-color: var(--terminal-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .terminal-box h2 {
+            color: var(--title-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 0.9rem;
+        }
+        .spec-table th, .spec-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .spec-table th {
+            background-color: rgba(255, 153, 0, 0.1);
+            color: var(--neon-amber);
+        }
+        .spec-table td {
+            color: #fff;
+        }
+        .story-section {
+            background-color: rgba(27, 30, 36, 0.85);
+            border-left: 6px solid var(--neon-amber);
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 0 6px 6px 0;
+            border: 1px solid var(--border-color);
+        }
+        .story-section h2 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 1.4rem;
+            text-shadow: 0 0 5px var(--neon-amber);
+        }
+        .review-card {
+            background-color: #121418;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .review-card h4 {
+            margin: 0 0 10px 0;
+            color: var(--neon-amber);
+        }
+        .cta-section {
+            background: linear-gradient(135deg, var(--terminal-gray) 0%, #744210 160%);
+            border-radius: 6px;
+            padding: 45px;
+            text-align: center;
+            border: 2px solid var(--neon-amber);
+        }
+        .cta-section h2 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 2rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+        }
+        .btn-call {
+            display: inline-block;
+            background-color: var(--bg-color);
+            color: var(--neon-amber);
+            border: 2px solid var(--neon-amber);
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 25px;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px rgba(255, 153, 0, 0.2);
+        }
+        .btn-call:hover {
+            background-color: var(--neon-amber);
+            color: #000;
+            box-shadow: 0 0 25px var(--neon-amber);
+            transform: scale(1.03);
+        }
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--border-color);
+            color: #4a5568;
+            font-size: 0.8rem;
+            background-color: #050608;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "공덕 마사지 이벤트",
+      "url": "https://t3b05-gd-massage-evt-1.pages.dev",
+      "description": "미니멀 엠버 터미널 무드의 공덕 마사지 가성비 정보망 및 엘든링 데이터마이닝 극비 썰 연동 콘솔.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://t3b05-gd-massage-evt-1.pages.dev/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
+<header>
+    <h1>AMBER_MAPO_MASSAGE_SYSTEM</h1>
+    <p>Minimalist Terminal Logic & Cost Efficiency Metrics</p>
+</header>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
+<div class="container">
+    <div class="nav-links">
+        <a href="index.html">메인 쉘</a>
+        <a href="about.html">상세 보고서</a>
+        <a href="blog.html">기밀 정보실</a>
+    </div>
 
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 화곡 셔츠룸 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+    <div class="terminal-box">
+        <h2>[AMBER_NODE] 공덕 정찰제 마사지 요율 테이블 마운트</h2>
+        <p>
+            공덕역 신공덕동, 도화동 인근의 복잡한 2차 회식 힐링 골목에서, 
+            허위 정보 필터에 휘둘려 비싼 가격 눈탱이를 맞고 불쾌하게 마무리를 했던 브로들이 있다면 주목해라.
+            형이 직접 공학적 검증 장치를 가동하여 오염 요소들을 완전히 제거한 진짜 **공덕 마사지 이벤트** 정보를 터미널 뷰로 제공한다.
+            그 어떤 불필요한 마찰 오버헤드 없이, 형이 짜놓은 다이렉트 VIP 핫라인 예약을 연결해서 가성비 최고조의 힐링 요율을 획득해라 브로.
+        </p>
+        
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>프로토콜 레벨 (PROTOCOL_LEVEL)</th>
+                    <th>제공 하드웨어 & 에코 세팅 (SPECS)</th>
+                    <th>요율 스펙 (1,000원 기준)</th>
+                    <th>포트 가이드 꿀팁 (bro_advice)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>VIP AMBER PROTOCOL</td>
+                    <td>프리미엄 앰프 음향 믹싱 + 1등급 안마 매칭</td>
+                    <td>사전 할인 패키지 정가제 적용</td>
+                    <td>전용 핫라인 예약 시 대기 0.00% 즉시 배정 패스</td>
+                </tr>
+                <tr>
+                    <td>STANDARD TERM SHELL</td>
+                    <td>중형 룸 스탠다드 세션 매칭</td>
+                    <td>실속 합리적 정찰 요율</td>
+                    <td>주말 예약 시 실시간 통화 연결로 잔여 룸 즉시 선점</td>
+                </tr>
+                <tr>
+                    <td>BASIC UTILITY LAYER</td>
+                    <td>소형 룸 미니멀 베이직 빌드업</td>
+                    <td>초저가 타임 슬롯 특급 할인가</td>
+                    <td>당일 비즈니스 스케줄 인증 시 대기 큐 우선권 제공</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 화곡 셔츠룸 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+    <div class="story-section">
+        <h2>🎮 프롬 소프트웨어 엘든링 미사용 보스 주석 코드 폭로와 공덕 힐링 룸의 뇌 신경 공명 물리</h2>
+        <p>
+            자, 여기서 이 영롱하고 빛나는 격자 그리드 비주얼에 100% 매칭되는, 게임 역사상 가장 충격적인 썰을 하나 더 깊게 풀어볼게. 
+            프롬 소프트웨어의 2천만 장 판매 신화 **엘든링(Elden Ring)**! 
+            미야자키 히데타카 감독은 개발 과정에서 유저들에게 시각적이고 청각적인 카타르시스를 유도하기 위해, 본편 출시 직전 게임 코드 깊은 곳에 미사용 극비 파일을 묻어두었어. 
+            이것을 전 세계 천재 데이터마이너들이 기계어(Assembly) 수준으로 파싱하면서 복원해낸 주석 파일 안에는 실로 무시무시한 공학 문장이 기재되어 있었지.
+        </p>
+        <p>
+            "인간 대뇌의 스트레스 패킷을 일시에 소거(Flush)하고 극상의 휴식 상태로 전이시키는 최상의 메트릭스는, 
+            반투명하게 시각적 노이즈를 걸러주는 80년대 레트로 격자형 벽체(Retro Synth Grid Overlay)로 설계된 공간 안에서, 
+            인공 반사음의 왜곡율을 완전히 제어하는 마이크 앰프를 통해 
+            자신의 성대를 울리는 목소리를 에코 주파수 320ms 대역으로 지연 공명시킬 때, 
+            뇌의 중추 신경망이 완벽한 카타르시스를 인지하며 극적인 평온 상태를 영구 마운트한다."
+        </p>
+        <p>
+            브로! 이게 대체 무엇을 의미하겠어? 
+            그 위대한 게임 디자인 거장 미야자키 히데타카가 유저들에게 소름 끼치는 짜릿함과 동시에 극적인 릴랙스를 유도하기 위해 연구했던 그 신경 생리학적 원천 기술이, 
+            다름 아니라 우리가 공덕역 최고의 VIP 룸에 앉아 신스웨이브 격자 조명 아래에서 마이크를 잡고 노래를 부르거나 명품 테라피로 피로를 풀 때의 뇌세포 이완 물리 법칙과 100% 소름 돋게 일치한다는 과학적 팩트야!
+        </p>
+        <p>
+            우리가 공덕 룸에 입장하여 힐링 테라피 세션과 완벽한 안마를 즐길 때 느끼는 전율적인 스트레스 해소는 
+            우연이 아니라, 엘든링 극비 개발 주석에 담겨 있던 전뇌 힐링 공식이 기계적으로 정확히 작동한 덕분이지. 
+            그러니 더 이상 저질 삐끼들의 가짜 요금 장난질과 유인 광고 꼼수에 뇌의 밸런스를 훼손시키지 말고, 
+            당장 형이 단단히 구축해둔 핫라인 다이얼(<span style="color: var(--neon-amber)">010-6279-0862</span>)을 발신해 공덕 최강의 공간을 정찰제로 선점해라 브로!
+        </p>
+    </div>
+
+    <div class="terminal-box">
+        <h3>📊 공덕역 오피스 단지 실제 이용자 UGC 정보 피드</h3>
+        <div class="review-card">
+            <h4>"공덕 가양지사 이대표" ⭐⭐⭐⭐⭐</h4>
+            <p>공덕 근처 회식용 안마 찾다가 가격 때문에 매번 골치였는데, 여기 가이드 요율대로 완벽히 정찰 운영해 줘서 접대 깔끔히 성공했습니다. 파트너들도 음향 에코 세팅에 아주 만족하더군요.</p>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+        <div class="review-card">
+            <h4>"네트워크 공학 쉘 브로" ⭐⭐⭐⭐⭐</h4>
+            <p>프로젝트 론칭 끝나고 팀원들과 방문했습니다. 형이 안내해 주는 요금이 정확히 맞아서 요금 실랑이 스트레스 0.00%네요. 핫라인 통화 연결도 칼같습니다.</p>
+        </div>
+        <div class="review-card">
+            <h4>"공덕 직영 한과장" ⭐⭐⭐⭐⭐</h4>
+            <p>인터넷 허위 정보망에 하도 데어서 불신이 팽배했는데, 010-6279-0862로 상담받고 제대로 대접받았습니다. 정직한 가이드를 제공해 주는 형에게 경의를 표합니다.</p>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <h2>[EXEC] DIAL_PORT_AMBER: 공덕 가격 투명 정찰제 실시간 다이얼</h2>
+        <p>어이 브로, 기만 매트릭스에 지배당하지 말고 정직한 가격으로 안전하게 마운트하자.</p>
+        <p>아래 다이얼 즉시 터치 시 공덕 전 권역 VIP 전용 케어 패널 및 할인 활성화!</p>
+        <a href="tel:010-6279-0862" class="btn-call">📞 즉시 통화 연결: 010-6279-0862</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 AMBER_MAPO_MASSAGE & CIA MK-Ultra Protection Network. All Rights Reserved.</p>
+    <p>Terminal_Port: 010-6279-0862 | Authenticated by Minimalist Tech OS</p>
+</footer>
+
 </body>
 </html>
