@@ -1,249 +1,84 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="neon-void" data-build="a1b2c3d4">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>정보 | 공덕 마사지 이벤트</title>
-    <meta name="description" content="공덕 지역 최고의 마사지 이벤트에 대한 상세 정보를 확인하세요. 과학적 접근 방식과 전문 테크닉으로 최적의 결과를 제공합니다. 전화 예약 010-6279-0862">
-    <meta name="keywords" content="공덕 마사지, 공덕 마사지 이벤트, 공덕 스포츠 마사지, 공덕 딥티슈 마사지, 마사지 이벤트, 공덕 정보">
-    <link rel="canonical" href="https://t3b05-gd-massage-evt-1.vercel.app/info">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="정보 | 공덕 마사지 이벤트">
-    <meta property="og:description" content="공덕 마사지 이벤트의 상세 정보와 과학적 접근 방식을 확인하세요.">
-    <meta property="og:url" content="https://t3b05-gd-massage-evt-1.vercel.app/info">
-    <meta property="og:image" content="https://t3b05-gd-massage-evt-1.vercel.app/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="정보 | 공덕 마사지 이벤트">
-    <meta name="twitter:description" content="공덕 마사지 이벤트의 상세 정보와 과학적 접근 방식을 확인하세요.">
-    <meta name="twitter:image" content="https://t3b05-gd-massage-evt-1.vercel.app/og-image.jpg">
-    <style>
-        /* Brutalist Avantgarde 리셋 및 기본값 */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-        body {
-            font-family: 'Noto Sans KR', 'IBM Plex Sans KR', 'Malgun Gothic', system-ui, -apple-system, sans-serif;
-            background: #f5f2ed; /* 생콘크리트 */
-            color: #1a1a1a;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        /* 타이포그래피: 포멀하고 권위 있는 어조 */
-        h1, h2, h3, h4 { font-weight: 700; letter-spacing: -0.02em; }
-        h1 { font-size: 2.8rem; line-height: 1.1; margin-bottom: 1.5rem; }
-        h2 { font-size: 2rem; line-height: 1.2; margin-bottom: 1rem; border-left: 6px solid #2b2b2b; padding-left: 1rem; }
-        h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
-        p { margin-bottom: 1rem; }
-        a { color: #0d0d0d; text-decoration: none; border-bottom: 2px solid transparent; transition: border-color 0.2s; }
-        a:hover { border-bottom-color: #0d0d0d; }
-        /* 레이아웃: 그리드 & 플렉스 */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .flex-center { display: flex; justify-content: center; align-items: center; }
-        /* 네비게이션 시스템 (hamburger-menu 패턴) */
-        .nav-bar {
-            background: #2b2b2b;
-            color: #f5f2ed;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .nav-bar .container { display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-weight: 800; font-size: 1.6rem; color: #f5f2ed; border: none; text-transform: uppercase; letter-spacing: 0.1em; }
-        .nav-logo:hover { border-bottom-color: transparent; opacity: 0.85; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: #f5f2ed; border-bottom-color: rgba(245,242,237,0.2); font-weight: 500; }
-        .nav-links a:hover { border-bottom-color: #f5f2ed; }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 0.5rem;
-        }
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: #f5f2ed;
-            margin: 4px 0;
-            transition: all 0.3s;
-        }
-        .hero {
-            background: #e8e4db; /* 약간 더 밝은 콘크리트 */
-            padding: 4rem 0 3rem;
-            border-bottom: 4px solid #2b2b2b;
-            margin-bottom: 3rem;
-        }
-        .hero h1 { font-size: 3.2rem; }
-        .hero .subhead { font-size: 1.2rem; color: #3a3a3a; max-width: 700px; }
-        /* 카드 */
-        .card {
-            background: #ffffff;
-            border: 3px solid #2b2b2b;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 8px 8px 0 rgba(43,43,43,0.08);
-            transition: box-shadow 0.2s, transform 0.2s;
-        }
-        .card:hover { box-shadow: 12px 12px 0 rgba(43,43,43,0.12); transform: translate(-2px, -2px); }
-        .card h3 { border-bottom: 2px solid #2b2b2b; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-        /* 버튼 */
-        .btn {
-            display: inline-block;
-            background: #2b2b2b;
-            color: #f5f2ed;
-            padding: 0.9rem 2.2rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            border: 3px solid #2b2b2b;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-            border-radius: 0;
-        }
-        .btn:hover { background: #f5f2ed; color: #2b2b2b; }
-        .btn-outline { background: transparent; color: #2b2b2b; }
-        .btn-outline:hover { background: #2b2b2b; color: #f5f2ed; }
-        /* 리스트 */
-        ul.feature-list { list-style: none; padding-left: 0; }
-        ul.feature-list li { padding: 0.5rem 0 0.5rem 1.8rem; position: relative; border-bottom: 1px dashed #ccc; }
-        ul.feature-list li::before { content: '▸'; position: absolute; left: 0; color: #2b2b2b; font-weight: bold; }
-        /* 테이블 (가격/정보) */
-        .info-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        .info-table th { background: #2b2b2b; color: #f5f2ed; padding: 0.8rem 1rem; text-align: left; font-weight: 600; }
-        .info-table td { padding: 0.8rem 1rem; border-bottom: 1px solid #ddd; background: #fff; }
-        .info-table tr:last-child td { border-bottom: 3px solid #2b2b2b; }
-        /* 푸터 */
-        .footer {
-            background: #2b2b2b;
-            color: #f5f2ed;
-            padding: 2.5rem 0;
-            margin-top: 4rem;
-            border-top: 4px solid #1a1a1a;
-        }
-        .footer a { color: #f5f2ed; border-bottom-color: rgba(245,242,237,0.3); }
-        .footer a:hover { border-bottom-color: #f5f2ed; }
-        /* FAQ */
-        .faq-item { margin-bottom: 1.5rem; }
-        .faq-q { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.6rem; }
-        .faq-q::before { content: 'Q.'; background: #2b2b2b; color: #f5f2ed; padding: 0.2rem 0.7rem; font-size: 0.8rem; }
-        .faq-a { padding-left: 2.5rem; color: #2e2e2e; border-left: 3px solid #ccc; }
-        /* 반응형 */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 1.6rem; }
-            .grid-2, .grid-3 { grid-template-columns: 1fr; gap: 1.5rem; }
-            .hero { padding: 2.5rem 0 2rem; }
-            .nav-links { display: none; flex-direction: column; background: #2b2b2b; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; gap: 0.5rem; }
-            .nav-links.active { display: flex; }
-            .hamburger { display: flex; }
-        }
-        @media (max-width: 480px) {
-            html { font-size: 14px; }
-            .container { padding: 0 1rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공덕 마사지 이벤트 — 상세 정보</title>
+  <meta name="description" content="공덕 마사지 이벤트의 상세 안내 페이지입니다. 이벤트 대상, 참여 조건, 사전 확인 절차, 기록 필수 항목 및 자주 묻는 질문 등을 전문가 시각에서 체계적으로 설명합니다.">
+  <meta name="keywords" content="공덕 마사지, 이벤트 상세, 참여 조건, 사전 확인, 기록 항목, FAQ">
+  <link rel="canonical" href="https://gongdeok-care-zone.link-hub.org/about.html">
+  <meta name="generator" content="custom-cms-7f3a">
+  <meta name="bpaas-design-system" content="brutalist-avantgarde">
+  <meta name="bpaas-design-theme" content="kr-neon-void">
+  <!-- Open Graph -->
+  <meta property="og:title" content="공덕 마사지 이벤트 — 상세 정보">
+  <meta property="og:description" content="공덕 마사지 이벤트의 목적, 절차, 기록 항목을 전문가가 안내합니다.">
+  <meta property="og:url" content="https://gongdeok-care-zone.link-hub.org/about.html">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav-bar">
-        <div class="container">
-            <a href="https://t3b05-gd-massage-evt-1.vercel.app" class="nav-logo">GD·MASSAGE</a>
-            <button class="hamburger" aria-label="메뉴 열기" onclick="this.parentElement.nextElementSibling.classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="https://t3b05-gd-massage-evt-1.vercel.app">홈</a></li>
-                <li><a href="https://t3b05-gd-massage-evt-1.vercel.app/info">정보</a></li>
-                <li><a href="https://t3b05-gd-massage-evt-1.vercel.app/event">이벤트</a></li>
-                <li><a href="tel:01062790862">예약</a></li>
-            </ul>
-        </div>
+  <header class="n-nav-d7fg">
+    <nav class="k-side-t2tm">
+      <a href="/" class="m-ico-bnz8">홈</a>
+      <a href="/about" class="m-ico-bnz8">소개</a>
+      <a href="/event" class="m-ico-bnz8">이벤트</a>
+      <a href="/info" class="m-ico-bnz8">상세 정보</a>
+      <a href="/contact" class="m-ico-bnz8">연락처</a>
+      <input type="checkbox" id="nav-toggle">
+      <label for="nav-toggle" class="hamburger">☰</label>
     </nav>
+  </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>공덕 마사지 이벤트 —<br>과학과 기술의 융합</h1>
-            <p class="subhead">공덕 지역 최상의 마사지 이벤트에 대한 모든 정보를 제공합니다. 근육 생리학 및 운동 역학에 기반한 정밀 테크닉으로, 당신의 신체 성능을 최적화합니다.</p>
-        </div>
+  <main class="t-card-iu81">
+    <section class="v-head-hw0l">
+      <h1>공덕 마사지 이벤트 – 상세 정보</h1>
+      <p>본 페이지는 공덕 마사지 이벤트에 참여하고자 하는 고객에게 필요한 모든 정보를 제공하기 위해 제작되었습니다. 각 섹션은 이벤트의 목적, 대상, 사전 확인 절차, 기록 필수 항목 및 자주 묻는 질문을 체계적으로 다루고 있습니다.</p>
     </section>
 
-    <main class="container">
-        <section>
-            <h2>서비스 개요</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>스포츠 마사지</h3>
-                    <p>운동 전후 근육 활성화 및 회복 촉진. 정적·동적 스트레칭과 결합된 딥티슈 기법으로 유연성 향상 및 부상 방지.</p>
-                    <ul class="feature-list">
-                        <li>근막 이완술 (Myofascial Release)</li>
-                        <li>관절 가동술 (Joint Mobilization)</li>
-                        <li>PNF 스트레칭 통합</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>딥티슈 마사지</h3>
-                    <p>만성 근육 통증 및 긴장 완화에 특화. 근육 심층까지 도달하는 압력으로 유착을 해소하고 혈류를 개선합니다.</p>
-                    <ul class="feature-list">
-                        <li>트리거 포인트 치료</li>
-                        <li>교차 마찰 마사지</li>
-                        <li>림프 배수 보조</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <section class="x-list-ys1x">
+      <h2>이벤트 개요</h2>
+      <p>공덕 지역에 위치한 전문 마사지 센터에서는 신규 고객을 위한 특별 이벤트를 진행합니다. 이 이벤트는 일정 기간 내에 예약을 완료하는 고객에게 맞춤형 상담 및 추가 혜택을 제공하는 것이 주요 목표입니다.</p>
+      <p>행사는 일정이 한정되어 있어 빠른 결정을 유도하며, 고객에게는 사전 검증 절차를 통해 서비스 기대치를 명확히 전달합니다. 이를 통해 서비스 이해 차이를 최소화하고, 고객 만족도를 높이는 데 중점을 두고 있습니다.</p>
+    </section>
 
-        <section style="margin-top: 4rem;">
-            <h2>상세 정보</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3>위치 및 운영</h3>
-                    <p><strong>주소:</strong> 서울 마포구 공덕동 (공덕역 3번 출구 도보 3분)</p>
-                    <p><strong>운영 시간:</strong> 매일 10:00 – 21:00 (연중무휴)</p>
-                    <p><strong>전화 예약:</strong> <a href="tel:01062790862">010-6279-0862</a></p>
-                    <p>사전 예약 시 대기 시간 없이 즉시 시술이 가능합니다.</p>
-                </div>
-                <div class="card">
-                    <h3>가격표 (이벤트 적용가)</h3>
-                    <table class="info-table">
-                        <thead>
-                            <tr>
-                                <th>서비스</th>
-                                <th>시간</th>
-                                <th>정상가</th>
-                                <th>이벤트가</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>스포츠 전신 마사지</td>
-                                <td>60분</td>
-                                <td>₩80,000</td>
-                                <td>₩60,000</td>
-                            </tr>
-                            <tr>
-                                <td>딥티슈 집중 케어</td>
-                                <td>90분</td>
-                                <td>₩120,000</td>
-                                <td>₩90,000</td>
-                            </tr>
-                            <tr>
-                                <td>커스텀 프리미엄</td>
-                                <td>120분</td>
-                                <td>₩160,000</td>
-                                <td>₩120,000</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p style="font-size: 0.9rem; color: #555;">* 모든 가격은 부가세 포함이며, 이벤트 기간에 한해 적용됩니다
+    <section class="x-list-ys1x">
+      <h2>대상 및 참여 조건</h2>
+      <p>본 이벤트는 18세 이상 성인 고객을 대상으로 하며, 사전 예약 시 기본 개인정보와 건강 상태를 확인하는 절차가 포함됩니다. 특히, 특정 질환(심혈관 질환, 피부 감염 등) 보유자는 사전 상담을 통해 참여 여부를 판단합니다.</p>
+      <p>또한, 이벤트 기간 내에 1회 이상 방문한 고객에게는 추가 세션 할인 쿠폰을 제공하며, 재방문 시 동일 조건을 적용받을 수 있습니다. 단, 이미 다른 프로모션에 참여 중인 고객은 중복 적용이 제한됩니다.</p>
+    </section>
+
+    <section class="x-list-ys1x">
+      <h2>서비스 제공 내용 및 차별점</h2>
+      <p>공덕 마사지 이벤트에서는 전신 통증 완화를 위한 맞춤형 테라피, 근막 이완, 그리고 심리적 안정에 초점을 맞춘 아로마 테라피가 포함됩니다. 각 세션은 60분 기준이며, 사전 상담 결과에 따라 개별 프로그램이 설계됩니다.</p>
+      <p>특징적인 차별점은 사전 검증 절차를 통해 고객의 기대와 실제 서비스 간 격차를 사전에 확인하고, 기록을 남겨 향후 서비스 개선에 활용한다는 점입니다. 이는 다른 일반 마사지 서비스와 비교했을 때, 데이터 기반의 품질 관리를 가능하게 합니다.</p>
+    </section>
+
+    <section class="x-list-ys1x">
+      <h2>사전 확인 절차</h2>
+      <p>이벤트 참여 전, 고객은 아래 항목들을 확인해야 합니다. 첫 번째는 서비스 내용에 대한 이해 여부이며, 두 번째는 개인 건강 상태와 알레르기 여부, 마지막으로는 기대 효과에 대한 현실적 판단입니다.</p>
+      <p>각 항목은 체크리스트 형식으로 제공되며, 담당 상담사가 직접 확인 후 전산 시스템에 기록합니다. 확인 절차가 누락될 경우, 서비스 제공 중 발생할 수 있는 부작용이나 불만을 최소화하기 위해 사전 조치를 취합니다.</p>
+    </section>
+
+    <section class="x-list-ys1x">
+      <h2>기록 필수 항목</h2>
+      <p>서비스 제공 전후에 반드시 기록해야 할 항목은 다음과 같습니다. ① 고객 기본 정보(이름, 연락처, 연령) ② 건강 상태 체크(과거 병력, 현재 복용 약물) ③ 서비스 전 기대치 및 목표 설정 ④ 세션 후 만족도 조사 및 이상 반응 여부.</p>
+      <p>이러한 기록은 고객 맞춤형 서비스 제공을 위한 기반 데이터이며, 향후 동일 고객이 재방문할 경우 이전 기록을 기반으로 프로그램을 고도화합니다. 또한, 법적 책임 회피와 품질 관리 차원에서 필수적으로 유지됩니다.</p>
+    </section>
+
+    <section class="x-list-ys1x">
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <h3>Q1. 이벤트는 언제까지 진행되나요?</h3>
+      <p>A. 이벤트는 2026년 12월 31일까지 진행되며, 해당 일자 이후에도 사전 예약이 가능한 경우가 있으니 최신 정보를 확인해 주세요.</p>
+      <h3>Q2. 예약 취소 정책은 어떻게 되나요?</h3>
+      <p>A. 예약 취소는 최소 24시간 전에 연락 주시면 전액 환불이 가능하며, 24시간 이내 취소 시 50% 환불 정책이 적용됩니다.</p>
+      <h3>Q3. 건강 상태에 따라 참여가 제한될 수 있나요?</h3>
+      <p>A. 네, 심혈관 질환, 급성 감염, 피부 상처 등이 있는 경우 사전 상담을 통해 안전 여부를 판단합니다. 필요 시 다른 치료 옵션을 안내해 드립니다.</p>
+    </section>
+  </main>
+
+  <footer class="t-list-5kx4">
+    <p>&copy; 2026 공덕 마사지 이벤트. 모든 권리 보유.</p>
+  </footer>
 </body>
 </html>

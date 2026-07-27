@@ -1,260 +1,98 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="sepia" data-build="a1b2c3d4">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>블로그 | 공덕 마사지 이벤트</title>
-    <meta name="description" content="공덕 마사지 이벤트의 과학적 접근법과 강력한 테크닉에 관한 전문 블로그. 근육 피로 해소, 스포츠 마사지 효과, 딥티슈 마사지의 데이터 기반 분석을 제공합니다. 전화 예약 010-6279-0862">
-    <meta name="keywords" content="공덕 마사지, 공덕 마사지 이벤트, 공덕 스포츠 마사지, 공덕 딥티슈 마사지, 마사지 이벤트, 마사지 효과 연구">
-    <link rel="canonical" href="https://t3b05-gd-massage-evt-1.vercel.app/blog">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="블로그 | 공덕 마사지 이벤트">
-    <meta property="og:description" content="과학적 연구 데이터로 검증된 공덕 마사지 이벤트의 효과와 전문 테크닉을 소개합니다.">
-    <meta property="og:url" content="https://t3b05-gd-massage-evt-1.vercel.app/blog">
-    <meta property="og:image" content="https://t3b05-gd-massage-evt-1.vercel.app/assets/og-blog.jpg">
-    <meta property="og:locale" content="ko_KR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="블로그 | 공덕 마사지 이벤트">
-    <meta name="twitter:description" content="공덕 마사지 이벤트의 과학적 접근법 — 데이터로 증명된 마사지 효과와 전문가 테크닉">
-    <meta name="twitter:image" content="https://t3b05-gd-massage-evt-1.vercel.app/assets/twitter-blog.jpg">
-    <style>
-        /* ===== CSS 변수 (이전 페이지와 동일) ===== */
-        :root {
-            --bg-primary: #f4f0e8;
-            --bg-secondary: #e8dcc8;
-            --text-primary: #1a1a1a;
-            --text-secondary: #3d3d3d;
-            --accent: #c0392b;
-            --accent-hover: #a93226;
-            --border: #2c2c2c;
-            --header-bg: #2c2c2c;
-            --header-text: #f4f0e8;
-            --card-bg: #ffffff;
-            --shadow: 6px 6px 0 rgba(0,0,0,0.3);
-            --font-mono: 'Courier New', Courier, monospace;
-            --font-sans: 'Arial', 'Helvetica', sans-serif;
-            --max-width: 1200px;
-            --section-padding: 4rem 2rem;
-            --card-padding: 2rem;
-            --border-radius: 0;
-        }
-
-        /* ===== 리셋 및 베이스 ===== */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; font-size: 18px; }
-        body {
-            font-family: var(--font-sans);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.7;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-        a:hover { color: var(--accent-hover); }
-        img { max-width: 100%; height: auto; display: block; }
-        ul, ol { padding-left: 1.5rem; }
-
-        /* ===== 타이포그래피 ===== */
-        h1 { font-size: 2.8rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; }
-        h2 { font-size: 2rem; font-weight: 800; letter-spacing: -0.01em; border-left: 6px solid var(--accent); padding-left: 1rem; margin: 2.5rem 0 1.5rem; }
-        h3 { font-size: 1.4rem; font-weight: 700; margin: 2rem 0 1rem; }
-        p { margin-bottom: 1.2rem; }
-        blockquote {
-            border-left: 6px solid var(--accent);
-            background: var(--bg-secondary);
-            padding: 1.5rem 2rem;
-            margin: 2rem 0;
-            font-style: italic;
-            font-weight: 600;
-            box-shadow: var(--shadow);
-        }
-
-        /* ===== 헤더/네비게이션 ===== */
-        .header {
-            background: var(--header-bg);
-            color: var(--header-text);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 4px solid var(--accent);
-        }
-        .header .logo a {
-            color: var(--header-text);
-            text-decoration: none;
-            font-family: var(--font-mono);
-            font-size: 1.4rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        .header .logo a:hover { color: var(--accent); }
-
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 8px;
-        }
-        .hamburger-menu span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: var(--header-text);
-            transition: 0.3s;
-        }
-
-        .nav { display: flex; gap: 2rem; align-items: center; }
-        .nav a {
-            color: var(--header-text);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.3rem 0.6rem;
-            border-bottom: 2px solid transparent;
-            transition: 0.2s;
-            font-size: 0.95rem;
-        }
-        .nav a:hover, .nav a.active { border-bottom-color: var(--accent); color: var(--accent); }
-
-        /* ===== 메인 콘텐츠 ===== */
-        .main { flex: 1; padding: var(--section-padding); max-width: var(--max-width); margin: 0 auto; width: 100%; }
-
-        /* ===== 블로그 포스트 ===== */
-        .blog-post {
-            background: var(--card-bg);
-            padding: var(--card-padding);
-            box-shadow: var(--shadow);
-            border: 2px solid var(--border);
-            margin-bottom: 3rem;
-        }
-        .blog-post .meta {
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .blog-post .meta span { background: var(--bg-secondary); padding: 0.2rem 0.8rem; }
-        .blog-post h1 { margin-bottom: 1rem; }
-        .blog-post .featured-image {
-            margin: 2rem 0;
-            border: 2px solid var(--border);
-            box-shadow: var(--shadow);
-        }
-        .blog-post .stat-highlight {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.2rem 1rem;
-            font-weight: 800;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        .blog-post ul li { margin-bottom: 0.6rem; }
-
-        /* ===== 푸터 ===== */
-        .footer {
-            background: var(--header-bg);
-            color: var(--header-text);
-            padding: 2rem;
-            text-align: center;
-            border-top: 4px solid var(--accent);
-            font-size: 0.85rem;
-        }
-        .footer .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1rem; }
-        .footer .footer-links a { color: var(--header-text); text-decoration: underline; text-underline-offset: 2px; }
-        .footer .footer-links a:hover { color: var(--accent); }
-
-        /* ===== 반응형 ===== */
-        @media (max-width: 768px) {
-            html { font-size: 16px; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.6rem; }
-            .header { padding: 0.8rem 1rem; }
-            .hamburger-menu { display: flex; }
-            .nav {
-                display: none;
-                flex-direction: column;
-                background: var(--header-bg);
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 1rem;
-                gap: 1rem;
-                border-bottom: 4px solid var(--accent);
-            }
-            .nav.open { display: flex; }
-            .nav a { font-size: 1rem; padding: 0.5rem; }
-            .main { padding: 2rem 1rem; }
-            .blog-post { padding: 1.5rem; }
-        }
-
-        /* ===== 햄버거 메뉴 js (인라인) ===== */
-        .hamburger-menu.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-        .hamburger-menu.active span:nth-child(2) { opacity: 0; }
-        .hamburger-menu.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-    </style>
+  <meta charset="UTF-8">
+  <title>공덕 마사지 이벤트 — 전문가가 알려주는 사전 체크리스트와 상황별 선택 가이드</title>
+  <meta name="description" content="공덕 마사지 이벤트를 앞두고 반드시 확인해야 할 체크리스트와 인원·시점·목적에 따라 최적의 서비스를 선택하는 방법을 데이터 기반으로 정리했습니다.">
+  <meta name="keywords" content="공덕 마사지, 마사지 이벤트, 사전 체크리스트, 상황별 선택, 마사지 현장 확인, 전문가 가이드">
+  <link rel="canonical" href="https://gongdeok-care-zone.link-hub.org/blog.html">
+  <meta property="og:title" content="공덕 마사지 이벤트 — 전문가가 알려주는 사전 체크리스트와 상황별 선택 가이드">
+  <meta property="og:description" content="공덕 마사지 이벤트를 앞두고 반드시 확인해야 할 체크리스트와 상황별 최적의 선택 기준을 제시합니다.">
+  <meta property="og:url" content="https://gongdeok-care-zone.link-hub.org/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://gongdeok-care-zone.link-hub.org/assets/og-image.jpg">
+  <!-- 기존 CSS 파일을 그대로 사용 -->
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-
-<!-- ===== 헤더 (이전 페이지와 동일) ===== -->
-<header class="header">
-    <div class="logo"><a href="/">공덕 마사지 이벤트</a></div>
-    <button class="hamburger-menu" aria-label="메뉴 열기" onclick="this.classList.toggle('active'); document.querySelector('.nav').classList.toggle('open');">
-        <span></span><span></span><span></span>
-    </button>
-    <nav class="nav">
-        <a href="/">홈</a>
-        <a href="/event">이벤트</a>
-        <a href="/about">소개</a>
-        <a href="/blog" class="active">블로그</a>
-        <a href="/contact">문의</a>
+  <header class="n-card-ljpp">
+    <h1>공덕 마사지 이벤트 블로그</h1>
+    <nav class="n-nav-8l4k">
+      <ul>
+        <li><a href="/">홈</a></li>
+        <li><a href="/about">소개</a></li>
+        <li><a href="/services">서비스</a></li>
+        <li><a href="/contact">연락처</a></li>
+      </ul>
     </nav>
-</header>
+  </header>
 
-<!-- ===== 메인 ===== -->
-<main class="main">
+  <div class="container">
+    <main class="t-main-8dw5">
+      <!-- 이벤트 개요 -->
+      <section class="n-card-ljpp">
+        <h2>이벤트 개요와 핵심 목표</h2>
+        <p>공덕 지역에서 진행되는 대규모 마사지 이벤트는 계절별 스트레스 관리와 지역 주민의 웰빙 향상을 목표로 기획되었습니다. 이번 행사에서는 다수의 인증된 마사지 업체가 참여해 다양한 테라피 옵션을 제공하며, 사전 예약 시 특별 할인 혜택을 적용합니다.</p>
+        <p>행사의 성공적인 진행을 위해서는 방문 전 사전 검증이 필수적입니다. 전문가가 제시하는 체크리스트를 통해 시설 위생, 시술자 자격, 서비스 범위 등을 사전에 확인함으로써, 기대 수준에 부합하는 서비스를 체험할 수 있습니다.</p>
+      </section>
 
-    <!-- 블로그 포스트 -->
-    <article class="blog-post" itemscope itemtype="https://schema.org/BlogPosting">
-        <div class="meta">
-            <span>📅 2025-03-21</span>
-            <span>📂 스포츠 마사지 과학</span>
-            <span>⏱ 8분 읽기</span>
-            <span>👤 전문가 칼럼</span>
-        </div>
+      <!-- 사전 체크리스트 -->
+      <section class="n-card-ljpp">
+        <h2>방문 전 반드시 확인해야 할 사전 체크리스트</h2>
+        <p>첫 번째 단계는 시설의 위생 인증서와 청결 관리 프로세스를 확인하는 것입니다. 현장 사진과 최신 위생 점검 결과를 공개하고 있는지, 그리고 코로나19 방역 가이드라인을 얼마나 철저히 이행하고 있는지를 검증합니다.</p>
+        <p>두 번째 단계는 시술자의 자격과 경력 검증입니다. 면허 번호, 교육 이수 내역, 그리고 실제 고객에게 제공한 시술 기록을 확인함으로써, 전문성을 객관적으로 판단할 수 있습니다.</p>
+        <p>세 번째 단계는 제공되는 마사지 종류와 세부 시간, 가격 구조를 명확히 파악하는 것입니다. 가격대가 명시되어 있지 않거나, 서비스 내용이 불분명한 경우에는 사전에 문의해 상세 정보를 받아두는 것이 좋습니다.</p>
+      </section>
 
-        <h1 itemprop="headline">공덕 마사지 이벤트: 과학적 데이터가 증명하는 스포츠 마사지의 근육 회복 효과</h1>
+      <!-- 상황별 선택 가이드 -->
+      <section class="n-card-ljpp">
+        <h2>인원·시점·목적에 따른 맞춤 선택 가이드</h2>
+        <p><strong>1인 방문·단기 회복</strong>을 목표로 하는 경우, 30분~60분 단위의 집중 테라피를 제공하는 업체를 우선 고려합니다. 특히 근골격계 통증 완화에 특화된 근육 이완 마사지는 짧은 시간 내에도 효과가 입증되었습니다.</p>
+        <p><strong>가족·친구와 함께하는 다인 방문</strong>이라면, 넓은 공간과 다중 시술실을 보유한 센터를 선택하는 것이 효율적입니다. 동시에 여러 방을 동시에 예약할 수 있는 시스템을 갖춘 곳이 편리합니다.</p>
+        <p><strong>장기적인 웰빙 관리·정기 방문</strong>을 계획 중이라면, 월 구독형 패키지와 맞춤형 프로그램을 제공하는 업체를 검토합니다. 정기적인 관리가 가능한지, 고객 맞춤형 프로그램 설계가 가능한지를 사전에 확인합니다.</p>
+      </section>
 
-        <div class="featured-image">
-            <img src="https://placehold.co/800x400/c0392b/f4f0e8?text=%EA%B3%B5%EB%8D%95+%EB%A7%88%EC%82%AC%EC%A7%80+%EC%9D%B4%EB%B2%A4%ED%8A%B8+%EB%8D%B0%EC%9D%B4%ED%84%B0+%EB%B6%84%EC%84%9D" alt="공덕 마사지 이벤트 과학적 데이터 분석 이미지" width="800" height="400" loading="lazy">
-        </div>
+      <!-- 현장 확인 포인트 -->
+      <section class="n-card-ljpp">
+        <h2>현장에서 직접 확인해야 할 핵심 포인트</h2>
+        <p>대기실 및 시술실의 청결 상태는 눈에 보이는 요소 중 가장 중요합니다. 바닥, 침대 시트, 소독 도구가 최신 상태인지, 그리고 교체 주기가 명시되어 있는지를 점검합니다.</p>
+        <p>시술 전 상담 과정에서 제공되는 설명자료와 동의서 양식은 투명성을 확인하는 지표가 됩니다. 모든 절차와 비용이 명확히 제시되고, 고객이 질문할 수 있는 채널이 마련돼 있는지 확인합니다.</p>
+        <p>마지막으로, 사후 관리 프로그램과 피드백 시스템이 갖춰져 있는지 확인합니다. 시술 후 부작용이 발생했을 때 신속히 대응할 수 있는 체계가 존재하는가가 서비스 신뢰도를 가늠하는 중요한 요소입니다.</p>
+      </section>
 
-        <p><span class="stat-highlight">2025년 메타분석</span> 국제 스포츠 의학 학술지 <em>Journal of Athletic Training</em>에 발표된 47건의 임상 연구를 종합 분석한 결과, <strong>스포츠 마사지는 고강도 운동 후 근육 통증을 평균 32% 감소</strong>시키고, 근력 회복 속도를 28% 향상시키는 것으로 나타났습니다. 공덕 마사지 이벤트는 이러한 과학적 근거를 바탕으로 설계된 전문 세션을 제공합니다.</p>
+      <!-- FAQ -->
+      <section class="n-card-ljpp">
+        <h2>자주 묻는 질문(FAQ)</h2>
+        <ul class="n-body-a5cd">
+          <li><strong>Q:</strong> 이벤트 기간 동안 예약이 몰려서 당일 방문이 어려운 경우는 어떻게 해야 하나요?<br>
+              <strong>A:</strong> 사전 예약 시스템을 활용해 최소 48시간 전까지 예약하는 것이 최선이며, 대기자 명단에 등록하면 취소 발생 시 바로 알림을 받을 수 있습니다.</li>
+          <li><strong>Q:</strong> 특정 부위만 집중적으로 마사지를 받고 싶을 때는 어떻게 요청하나요?<br>
+              <strong>A:</strong> 예약 시 ‘맞춤 부위 선택’ 옵션을 선택하고, 시술 전 담당 시술자와 구체적인 부위와 강도를 사전 협의하면 원하는 맞춤 서비스를 받을 수 있습니다.</li>
+          <li><strong>Q:</strong> 행사 당일 현장 결제와 사전 결제 중 어느 쪽이 더 안전한가요?<br>
+              <strong>A:</strong> 사전 결제는 환불 정책과 할인 혜택이 명확히 적용되므로 안전성이 높습니다. 현장 결제는 즉시 영수증 발행 여부를 확인하고, 카드 결제 시 영수증을 반드시 보관하세요.</li>
+          <li><strong>Q:</strong> 이벤트가 끝난 후에도 지속적인 관리 프로그램을 이용할 수 있나요?<br>
+              <strong>A:</strong> 대부분의 업체가 이벤트 종료 후에도 정기 프로그램을 별도 요금제로 제공하므로, 방문 전 담당자에게 장기 이용 플랜을 문의하는 것이 좋습니다.</li>
+        </ul>
+      </section>
 
-        <h2>1. 근육 미세 손상과 마사지의 생체 역학</h2>
-        <p>운동 후 24~48시간 내 발생하는 지연성 근육통(DOMS)은 근섬유의 미세 파열과 염증 반응에서 비롯됩니다. 2024년 <em>Journal of Applied Physiology</em>의 연구에 따르면, 딥티슈 마사지(deep tissue massage)는 근막 내 히알루론산의 점탄성을 개선하고, 염증성 사이토카인(IL-6, TNF-α)의 농도를 <strong>최대 43% 낮추는</strong> 것으로 확인됐습니다.</p>
-        <p>공덕에서 진행되는 마사지 이벤트는 이러한 생리학적 메커니즘을 정확히 타겟팅합니다. 특히 스포츠 마사지 테크닉은 근육 방추(muscle spindle)의 감도를 조절하여 비정상적인 근긴장을 해소하고, 골지건 기관(Golgi tendon organ)을 자극해 과도한 수축을 억제합니다.</p>
+      <!-- 마무리 및 권고 -->
+      <section class="n-card-ljpp">
+        <h2>결론 및 최종 권고</h2>
+        <p>공덕 마사지 이벤트는 지역 주민에게 높은 수준의 웰빙 서비스를 제공하기 위해 체계적인 사전 검증과 맞춤형 선택 가이드를 제시합니다. 체크리스트와 상황별 가이드를 활용하면, 기대 수준에 부합하는 서비스를 선택할 확률이 크게 향상됩니다.</p>
+        <p>위에서 제시한 기준을 토대로 사전 준비를 마친 뒤 현장에서 최종 확인 절차를 거치면, 만족도 높은 마사지를 경험할 수 있습니다. 이벤트 일정과 세부 사항은 공식 웹사이트와 SNS 채널을 통해 실시간으로 업데이트되니, 최신 정보를 주시하시기 바랍니다.</p>
+      </section>
+    </main>
+  </div>
 
-        <blockquote>
-            “공덕 마사지 이벤트에서 적용하는 과학적 프로토콜은 단순한 릴렉세이션을 넘어, 근육 재생 사이클을 가속화하는 데이터 기반 접근법입니다. 87%의 내담자가 세션 직후 관절 가동 범위가 유의미하게 증가했습니다.”
-        </blockquote>
-
-        <h2>2. 주요 수치로 보는 공덕 마사지 이벤트의 효과</h2>
-        <h3>2.1 혈류 증가 및 젖산 제거</h3>
-        <p>도플러 초음파를 활용한 연구(2023, <em>Scandinavian Journal of Medicine & Science in Sports</em>)에서는 스포츠 마사지 적용 후 국소 혈
+  <footer class="n-card-ljpp">
+    <p>&copy; 2026 공덕 케어 존. All rights reserved.</p>
+    <nav class="n-nav-8l4k">
+      <ul>
+        <li><a href="/">홈</a></li>
+        <li><a href="/privacy">개인정보 처리방침</a></li>
+        <li><a href="/terms">이용약관</a></li>
+      </ul>
+    </nav>
+  </footer>
 </body>
 </html>
